@@ -1,6 +1,8 @@
 # Simple Rate Limiter
 
-Simple rate limiter example, based on a sliding scale time window.
+Simple rate limiter example, based on a sliding scale time window
+
+`node app.js` to run (built and tested against node v9.7.1)
 
 ## Overview
 
