@@ -6,7 +6,7 @@ Simple rate limiter example, based on a sliding scale time window.
 
 Imagine a rate limiting of 4 events per 5 seconds:
 
-
+```
 Time (seconds):  | 1   2   3   4   5 | 6   7*  8   9  10 |
                  -----------------------------------------
 Events:          | x |   | x | x | x | x | x | x | x |   |
@@ -15,6 +15,7 @@ Fixed Window:    |   -------->       |    -------->      |
                  -----------------------------------------
 Sliding Window:          |     -------->     |
                  -----------------------------------------
+```
 
 * Should we allow the event at second 7?  
 - Fixed Window: Yes, because we only have one previous event in the second window
