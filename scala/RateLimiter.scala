@@ -13,15 +13,13 @@ object RateLimiterResult extends Enumeration {
 
 class RateLimiter(
   maxWindowSeconds: Long,
-  defaultOptions: RateLimiterOptions,
-  userOptions: Map[String, RateLimiterOptions] = Map[String, RateLimiterOptions]()
+  options: RateLimiterOptions
 ) {
   val windows = Map[Long, RateLimiterWindow]()
 
   def request(userId: String, timestamp: Long = System.currentTimeMillis) = {
     val timestampSeconds = timestamp / 1000
     val windowIndex = timestampSeconds % maxWindowSeconds
-    val options = userOptions.getOrElse(userId, defaultOptions)
 
     setRequestEvent(timestampSeconds, windowIndex, userId)
 
